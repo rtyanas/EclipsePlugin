@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            name="Menu Run Sample"
+            id="ThreadingProject">
+      </category>
+      <view
+            name="Menu Run View"
+            icon="icons/sample.gif"
+            category="ThreadingProject"
+            class="com.yanas.eclipse.threadingproject.ThreadingView"
+            id="com.yanas.eclipse.threadingproject.ThreadingView">
+      </view>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.perspectiveExtensions">
+      <perspectiveExtension
+            targetID="org.eclipse.jdt.ui.JavaPerspective">
+         <view
+               ratio="0.5"
+               relative="org.eclipse.ui.views.ProblemView"
+               relationship="right"
+               id="com.yanas.eclipse.threadingproject.ThreadingView">
+         </view>
+      </perspectiveExtension>
+   </extension>
+   
+   <extension
+         point="org.eclipse.help.contexts">
+      <contexts
+            file="contexts.xml">
+      </contexts>
+   </extension>
+   
+   <extension
+   		point="org.eclipse.ui.commands"
+   >
+   <command
+            categoryId="org.eclipse.ui.examples.contributions.commands.category"
+            id="com.yanas.eclipse.threadingproject.runmenu"
+            description="Run This Desc"
+            name="Run Fib 10"
+            defaultHandler="com.yanas.eclipse.threadingproject.RunMenuContrib"
+            >
+   </command>
+   
+   <command
+            categoryId="org.eclipse.ui.examples.contributions.commands.category"
+            id="com.yanas.eclipse.threadingproject.runmenu2"
+            description="Run This Desc"
+            name="Run Fib 40"
+            defaultHandler="com.yanas.eclipse.threadingproject.RunMenuContrib2"
+            >
+   </command>
+   
+   <command
+            categoryId="org.eclipse.ui.examples.contributions.commands.category"
+            id="com.yanas.eclipse.threadingproject.runmenu3"
+            description="Run This Desc"
+            name="Run Fib 60"
+            defaultHandler="com.yanas.eclipse.threadingproject.RunMenuContrib3"
+            >
+   </command>
+   
+   <command
+            categoryId="org.eclipse.ui.examples.contributions.commands.category"
+            id="com.yanas.eclipse.threadingproject.runmenurandom"
+            description="Run This Desc"
+            name="Run random Fib"
+            defaultHandler="com.yanas.eclipse.threadingproject.RunMenuContribRandom"
+            >
+   </command>
+   
+   </extension>
+   
+   <extension
+         id="com.yanas.eclipse.threadingproject.RunMenuID"
+         name="RunMenu"
+         point="org.eclipse.ui.menus"
+         >
+         <menuContribution
+			locationURI="menu:com.yanas.eclipse.threadingproject.ThreadingView?after=additions"
+			>
+			<command
+               commandId="com.yanas.eclipse.threadingproject.runmenu"
+               mnemonic="Run This">
+         </command>
+			
+			<command
+               commandId="com.yanas.eclipse.threadingproject.runmenu2"
+               mnemonic="Run This">
+         </command>
+			
+			<command
+               commandId="com.yanas.eclipse.threadingproject.runmenu3"
+               mnemonic="Run This">
+         </command>
+			
+			<command
+               commandId="com.yanas.eclipse.threadingproject.runmenurandom"
+               mnemonic="Run This">
+         </command>
+			
+		</menuContribution>
+		
+<!-- 	allPopups   (true | false) "false" -->
+
+		 <menu
+			label="Run This Menu"
+			id=""
+			mnemonic=""
+			icon=""
+			tooltip=""
+			commandId=""
+			>
+			</menu>
+         
+   </extension>
+
+</plugin>

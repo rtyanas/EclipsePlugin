@@ -1,0 +1,6 @@
+workspace/com.example.helloworld
+workspace/org.eclipse.swt
+workspace/SWTExamples
+workspace/ThreadingProject
+*.class
+.metadata
